@@ -1,9 +1,11 @@
 #######################################
 # rubygems module
-# Puzzle ITC - haerry+puppet(at)puzzle.ch
-# GPLv3
+# original by luke kanies
+# http://github.com/lak
+# adapted by  Puzzle ITC 
+# haerry+puppet(at)puzzle.ch
 #######################################
 
-
-# modules_dir { "rubygems": }
-class rubygems {}
+class rubygems {
+	package { rubygems: ensure => installed }
+}
