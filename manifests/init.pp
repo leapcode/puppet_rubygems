@@ -13,6 +13,8 @@
 # the Free Software Foundation.
 #
 
+import 'defines.pp'
+
 class rubygems {
 	package { rubygems: ensure => installed }
 }
