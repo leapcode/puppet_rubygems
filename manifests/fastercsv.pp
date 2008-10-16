@@ -1,3 +1,3 @@
-class rubygems::mysql {
+class rubygems::fastercsv {
   rubygems::package{'fastercsv': }
 }
