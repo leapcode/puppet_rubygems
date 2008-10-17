@@ -16,12 +16,12 @@
 import 'defines.pp'
 
 class rubygems {
-  include rubygems::base
+    include rubygems::base
 }
 
 class rubygems::base {
-	package { rubygems: 
-    ensure => present
-  }
+    package { rubygems: 
+        ensure => present
+    }
 }
 

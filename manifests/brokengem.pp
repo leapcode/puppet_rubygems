@@ -6,5 +6,3 @@ define rubygems::brokengem($source,$ensure) {
     }
     package { $name: ensure => $ensure, provider => gem, source => "/tmp/$name.gem" }
 }
-
-# $Id$
