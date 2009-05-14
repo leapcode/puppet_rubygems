@@ -1,5 +1,5 @@
 class rubygems::tmail {
-  include rubygems::devel
+  include ::rubygems::devel
   package{'tmail':
     ensure => present,
     provider => gem,

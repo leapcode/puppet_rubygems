@@ -1,5 +1,5 @@
 class rubygems::gpgme{
-  include rubygems::devel
+  include ::rubygems::devel
   include gpg::gpgme::devel
 
   package{'ruby-gpgme':
