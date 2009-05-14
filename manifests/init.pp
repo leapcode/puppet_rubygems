@@ -14,9 +14,7 @@
 #
 
 class rubygems {
-  include ruby::devel
-	package{'rubygems':
+  package{'rubygems':
     ensure => installed,
-    require => Package['ruby-devel'],
   }
 }

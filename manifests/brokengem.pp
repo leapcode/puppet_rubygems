@@ -4,7 +4,11 @@ define rubygems::brokengem($source,$ensure) {
         creates => "/tmp/$name.gem",
         before => Package[$name]
     }
-    package { $name: ensure => $ensure, provider => gem, source => "/tmp/$name.gem" }
+    package{$name:
+        ensure => $ensure,
+        provider => gem,
+        source => "/tmp/$name.gem"
+    }
 }
 
 # $Id$
