@@ -4,6 +4,6 @@ class rubygems::sqlite {
   package{'sqlite-ruby':
     ensure => present,
     provider => gem,
-    require => [ Package['rubygems'], Pakcage['sqlite-devel'] ],
+    require => [ Package['rubygems'], Package['sqlite-devel'] ],
   }
 }
