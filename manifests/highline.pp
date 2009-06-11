@@ -1,8 +1,7 @@
 class rubygems::highline {
   include rubygems
-  package{'highline':
+  package{'rubygem-highline':
     ensure => present,
-    provider => gem, 
     require => Package['rubygems'],
   }
 }
