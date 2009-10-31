@@ -1,5 +1,5 @@
 class rubygems::devel {
-  include rubygems
+  include ::rubygems
   include ruby::devel
   include gcc
 }

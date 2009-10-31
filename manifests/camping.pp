@@ -1,6 +1,5 @@
 class rubygems::camping {
-  include rubygems
-  include rack
+  include rubygems::rack
   package{'camping':
     ensure => present,
     provider => gem,

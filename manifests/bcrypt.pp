@@ -1,5 +1,5 @@
 class rubygems::bcrypt {
-  include rubygems
+  include ::rubygems
   package{'bcrypt-ruby':
     ensure => present,
     provider => gem,
