@@ -1,5 +1,5 @@
 class rubygems::activerecord {
-  require ::rubygems
+  require rubygems
   package{'activerecord':
     ensure => present,
     provider => gem,

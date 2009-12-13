@@ -1,5 +1,5 @@
 class rubygems::markaby {
-  require ::rubygems
+  require rubygems
   package{'markaby':
     ensure => present,
     provider => gem,

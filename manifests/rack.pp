@@ -1,5 +1,5 @@
 class rubygems::rack {
-  require ::rubygems
+  require rubygems
   package{'rack':
     ensure => present,
     provider => gem,
