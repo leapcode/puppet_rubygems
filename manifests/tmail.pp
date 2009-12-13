@@ -1,8 +1,7 @@
 class rubygems::tmail {
-  include ::rubygems::devel
+  require ::rubygems::devel
   package{'tmail':
     ensure => present,
     provider => gem,
-    require => [ Package['rubygems'], Package['gcc'] ],
   }
 }

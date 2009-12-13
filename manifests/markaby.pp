@@ -1,8 +1,7 @@
 class rubygems::markaby {
-  include ::rubygems
+  require ::rubygems
   package{'markaby':
     ensure => present,
     provider => gem,
-    require => Package['rubygems'],
   }
 }

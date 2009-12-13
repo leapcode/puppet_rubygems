@@ -1,10 +1,9 @@
 class rubygems::gpgme{
-  include ::rubygems::devel
-  include gpg::gpgme::devel
+  require ::rubygems::devel
+  require gpg::gpgme::devel
 
   package{'ruby-gpgme':
     ensure => present,
     provider => gem,
-    require => [ Package['rubygems'], Package['gcc'] ],
   }
 }
