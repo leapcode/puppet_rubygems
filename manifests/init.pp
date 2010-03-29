@@ -13,15 +13,8 @@
 # the Free Software Foundation.
 #
 
-import 'defines.pp'
-
 class rubygems {
-    include rubygems::base
-}
-
-class rubygems::base {
-    package { rubygems: 
+    package{'rubygems': 
         ensure => present
     }
 }
-
