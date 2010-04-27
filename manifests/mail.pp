@@ -4,4 +4,8 @@ class rubygems::mail {
     ensure => present,
     provider => gem,
   }
+
+  if $rubyversion == '1.8.6' {
+    require rubygems::tlsmail
+  }
 }
