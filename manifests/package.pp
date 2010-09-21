@@ -1,6 +1,11 @@
 define rubygems::package(
-    $ensure = 'present'
+    $ensure = 'present', 
+    $requiresgcc = false
 ) {
+    if $requiresgcc {
+        require gcc
+    }
+
     package{$name:
         provider => gem,
         ensure => $ensure,
