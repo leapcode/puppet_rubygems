@@ -1,4 +1,4 @@
 class rubygems::mysql {
-    include mysql::devel
-    rubygems::package{'mysql':}
+    require ::mysql::devel
+    rubygems::gem{'mysql':}
 }
