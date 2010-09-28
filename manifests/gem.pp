@@ -29,7 +29,7 @@ define rubygems::gem(
   $requiresgcc = false
 ) {
   require ::rubygems
-  if $requiresgcc {
+  if $requiresgcc or ($buildflags != 'absent') {
     require ::gcc
   }
 
