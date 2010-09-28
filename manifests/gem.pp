@@ -21,13 +21,17 @@
 # You can also enforce to use the gem command to manage the gem
 # by setting provider to `exec`.
 #
-define rubygems::brokengem(
+define rubygems::gem(
+  $ensure = 'present',
   $source = 'absent',
   $provider = 'default',
   $buildflags = 'absent',
-  $ensure = 'present'
-){
+  $requiresgcc = false
+) {
   require ::rubygems
+  if $requiresgcc {
+    require ::gcc
+  }
 
   if $name =~ /\-(\d|\.)+$/ {
     $real_name = regsubst($name,'^(.*)-(\d|\.)+$','\1')
@@ -38,13 +42,13 @@ define rubygems::brokengem(
 
   if $source != 'absent' {
     if $ensure != 'absent' {
-      require rubygems::brokengem::cachedir
+      require rubygems::gem::cachedir
       exec{"get-gem-$name":
-        command => "/usr/bin/wget -O ${rubygems::brokengem::cachedir::dir}/$name.gem $source",
-        creates => "${rubygems::brokengem::cachedir::dir}/$name.gem",
+        command => "/usr/bin/wget -O ${rubygems::gem::cachedir::dir}/$name.gem $source",
+        creates => "${rubygems::gem::cachedir::dir}/$name.gem",
       }
     } else {
-      file{"${rubygems::brokengem::cachedir::dir}/$name.gem":
+      file{"${rubygems::gem::cachedir::dir}/$name.gem":
         ensure => 'absent';
       }
     }
@@ -97,7 +101,7 @@ define rubygems::brokengem(
     }
     if $source != 'absent' {
       Package["$name"]{
-        source => "${rubygems::brokengem::cachedir::dir}/$name.gem"
+        source => "${rubygems::gem::cachedir::dir}/$name.gem"
       }
     }
   }
