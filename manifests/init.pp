@@ -14,7 +14,7 @@
 #
 
 class rubygems {
-    package{'rubygems': 
-        ensure => present
-    }
+  package{'rubygems':
+    ensure => installed,
+  }
 }
