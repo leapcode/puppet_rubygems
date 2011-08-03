@@ -1,6 +1,6 @@
 class rubygems::moneta {
   require rubygems
-  package{'mondeta':
+  package{'moneta':
     ensure => present,
     provider => gem,
   }
