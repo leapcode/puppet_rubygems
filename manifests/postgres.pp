@@ -1,4 +1,4 @@
 class rubygems::postgres {
-    require ::postgres::devel
+    require postgres::devel
     rubygems::gem{'ruby-pg':}
 }
