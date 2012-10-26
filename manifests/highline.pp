@@ -8,6 +8,7 @@ class rubygems::highline {
     debian,ubuntu: {
       Package['rubygem-highline']{
         name => 'ruby-highline'
+      }
     }
   }
 }
