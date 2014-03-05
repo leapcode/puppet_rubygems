@@ -18,11 +18,10 @@ class rubygems {
     ensure => installed,
   }
   file { '/etc/gemrc':
-    source => [ 'puppet:///site_rubygems/gemrc',
-                'puppet:///rubygems/gemrc' ],
+    source => [ 'puppet:///modules/site_rubygems/gemrc',
+                'puppet:///modules/rubygems/gemrc' ],
     mode   => '0644',
     owner  => 'root',
     group  => 'root',
   }
-
 }
