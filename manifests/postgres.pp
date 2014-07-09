@@ -1,5 +1,5 @@
 class rubygems::postgres {
-  if $::operatingsystem == 'CentOS' and $::lsbmajdistrelease > 5 {
+  if $::operatingsystem == 'CentOS' and $::operatingsystemmajrelease > 5 {
     package{'rubygem-pg':
       ensure => installed,
     }
