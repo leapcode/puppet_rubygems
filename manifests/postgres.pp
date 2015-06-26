@@ -1,5 +1,6 @@
 class rubygems::postgres {
-  if $::operatingsystem == 'CentOS' and $::operatingsystemmajrelease > 5 {
+  if $::osfamily == 'RedHat' and
+    versioncmp($::operatingsystemmajrelease,'5') > 0 {
     package{'rubygem-pg':
       ensure => installed,
     }
