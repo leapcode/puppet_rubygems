@@ -13,8 +13,9 @@
 # the Free Software Foundation.
 #
 
+# manage rubygems basics
 class rubygems {
-  # from debian 8 on this is not anymore needed
+  # from debian 8 on this is not anymore needed as it's part of the ruby pkg
   if ($::operatingsystem != 'Debian') or (versioncmp($::operatingsystemmajrelease,'8') < 0) {
     package{'rubygems':
       ensure => installed,
