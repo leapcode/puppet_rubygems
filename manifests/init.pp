@@ -14,7 +14,10 @@
 #
 
 class rubygems {
-  package{'rubygems':
-    ensure => installed,
+  # from debian 8 on this is not anymore needed
+  if ($::operatingsystem != 'Debian') or (versioncmp($::operatingsystemmajrelease,'8') < 0) {
+    package{'rubygems':
+      ensure => installed,
+    }
   }
 }
