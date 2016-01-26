@@ -1,6 +1,6 @@
 class rubygems::bcrypt {
   if ($::osfamily == 'RedHat') and
-    versioncmp($::operatingsystemmajrelease,'6') > 0 {
+    versioncmp($::operatingsystemrelease,'6') > 0 {
     package{'rubygem-bcrypt':
       ensure => present,
     }

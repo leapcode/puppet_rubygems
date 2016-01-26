@@ -10,7 +10,7 @@ class rubygems::xmlsimple {
       }
     }
   }
-  if $::operatingsystem == 'CentOS' and $::operatingsystemmajrelease > 6 {
+  if $::operatingsystem == 'CentOS' and versioncmp($::operatingsystemrelease, '6') > 0 {
     # not yet packaged
     Package['rubygem-xml-simple']{
       name     => 'xml-simple',

@@ -1,7 +1,7 @@
 # manage the mail rubygem
 class rubygems::mail {
   if ($::osfamily == 'RedHat') and
-    versioncmp($::operatingsystemmajrelease,'6') > 0 {
+    versioncmp($::operatingsystemrelease,'6') > 0 {
     package{'rubygem-mail':
       ensure => present,
     }
