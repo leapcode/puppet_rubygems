@@ -8,11 +8,16 @@ class rubygems::gpgme{
           $provider    = 'gem'
           $packagename = 'ruby-gpgme'
           }
-        default:  {
+        'wheezy':  {
           # don't need to install gpgme as gem, debian package works
           # fine with the gpg module
           $provider    = 'apt'
           $packagename = 'libgpgme-ruby'
+        }
+        default:  {
+          # from jessie on this package
+          $provider    = 'apt'
+          $packagename = 'ruby-gpgme'
         }
       }
     }
